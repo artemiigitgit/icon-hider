@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "icon-hider"
+version = "1.0.0"
+description = "Скрывает/показывает иконки рабочего стола Windows одним кликом, с тёмным UI и работой в трее"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Your Name" }]
+dependencies = [
+    "pystray>=0.19.5",
+    "pillow>=10.0.0",
+    "pywin32>=306",
+]
+
+[project.scripts]
+icon-hider = "icon_hider.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+icon_hider = ["assets/icon.ico"]
